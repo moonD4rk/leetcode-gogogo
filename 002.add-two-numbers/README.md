@@ -45,7 +45,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 
 
-
+对于数据结构的处理还是有一些不清除的地方，需要继续学习。
 
 
 
