@@ -55,3 +55,36 @@ func searchInsert(nums []int, target int) int {
 
 ```
 
+2.二分法
+
+每次遍历前，将列表从中间拆成两个，判断目标值是在前面列表还是后面列表。
+
+```go
+func searchInsert(nums []int, target int) int {
+	var (
+		result int
+		length = len(nums) - 1
+		mid    int
+	)
+	switch {
+	case target > nums[length]:
+		return length + 1
+	case target < nums[result]:
+		return result
+	default:
+		for result < length {
+			mid = (result + length) / 2
+			switch {
+			case target < nums[mid]:
+				length = mid
+			case target == nums[mid]:
+				return mid
+			case target > nums[mid]:
+				result = mid + 1
+			}
+		}
+		return result
+	}
+}
+```
+
