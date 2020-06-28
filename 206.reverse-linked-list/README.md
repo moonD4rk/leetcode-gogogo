@@ -17,7 +17,7 @@ A linked list can be reversed either iteratively or recursively. Could you imple
 
 #### 1. 迭代
 
-迭代的核心思想是，要将新链表的值赋给当前链表的下一个值 `l.next = prefix ， 这样 prefix 每次都会迭代，他的变化就是
+迭代的核心思想是，要将新链表的值赋给当前链表的下一个值 `list.next = prefix` ， 这样 `prefix` 每次都会迭代变化如下，这样就实现了当前节点的下一个节点 `list.next`指向了上一个节点 `prefix`
 
 ```
 list: 1->2->3->4->5->nil
@@ -26,7 +26,11 @@ list.next = prefix  [2->1->nil]
 list.next = prefix  [3->2->1->nil]
 ```
 
+为了让迭代能进行下去，需要一个临时链表 `suffix` 用来存放 list 的值，
 
+`suffix = list.next.` ...  `list = suffix`。
+
+注意初始化 prefix 时不要使用 `new()`函数，使用 `new` 初始化出 `0`值
 
 ```go
 package main
