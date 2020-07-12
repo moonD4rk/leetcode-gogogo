@@ -48,3 +48,24 @@ func hasCycle(head *ListNode) bool {
 // Memory Usage: 5.2 MB, less than 5.53% of Go online submissions for Linked List Cycle.
 ```
 
+#### 2. 使用双指针
+
+遍历 `list` 快指针每次移动两步，慢指针每次移动一步，如果快慢指针相遇则说明有环.
+
+```go
+func hasCycle2Point(node *ListNode) bool {
+	fast := node
+	slow := node
+	for fast != nil && fast.Next != nil {
+		fast = fast.Next.Next
+		slow = slow.Next
+		if fast == slow {
+			return true
+		}
+	}
+	return false
+}
+// Runtime: 4 ms, faster than 98.87% of Go online submissions for Linked List Cycle.
+// Memory Usage: 3.9 MB, less than 34.56% of Go online submissions for Linked List Cycle.
+```
+
