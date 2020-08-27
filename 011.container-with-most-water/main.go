@@ -40,9 +40,30 @@ func short(a, b int) int {
 	}
 }
 
+func maxArea2(height []int) int {
+	if len(height) < 2 {
+		return 0
+	}
+	var area int
+	left := 0
+	right := len(height) - 1
+	for left <= right {
+		tempArea := (right - left) * short(height[left], height[right])
+		if tempArea > area {
+			area = tempArea
+		}
+		if height[left] < height[right] {
+			left++
+		} else {
+			right--
+		}
+	}
+	return area
+}
+
 func main() {
 	for _, v := range numbers {
-		s := maxArea(v)
+		s := maxArea2(v)
 		log.Println(s)
 	}
 }
