@@ -1,6 +1,7 @@
 # 多线程顺序输出字符
 
-开启三个线程顺序输出 `ABC` 三个字符各 10 次
+1. 开启三个线程顺序输出 `ABC` 三个字符各 10 次
+2. 开启 n 个线程顺序输出 1-n 个数字
 
 ## FanIn-Fanout
 
@@ -35,4 +36,3 @@ func fanIn(times int, inputs ...chan message) chan message {
 }
 
 ```
-
