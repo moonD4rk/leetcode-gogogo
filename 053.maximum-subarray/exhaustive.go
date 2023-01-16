@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func maxSubArray(nums []int) int {
-	if len(nums) == 1{
+	if len(nums) == 1 {
 		return nums[0]
 	}
 	maxSum := nums[0]

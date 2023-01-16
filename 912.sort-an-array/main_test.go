@@ -22,7 +22,6 @@ func benchmarkSortBubble(i int, b *testing.B) {
 	sortBubble(a)
 }
 
-
 func BenchmarkSortBubble100(b *testing.B) {
 	benchmarkSortBubble(100, b)
 }
@@ -46,4 +45,3 @@ func BenchmarkSortBubble1000000(b *testing.B) {
 func BenchmarkSortBubble10000000(b *testing.B) {
 	benchmarkSortBubble(10000000, b)
 }
-

@@ -21,9 +21,7 @@ var (
 )
 
 func intToRoman(i int) string {
-	var (
-		k1000, k100, k10, k int
-	)
+	var k1000, k100, k10, k int
 	k1000 = i / 1000
 	result := ""
 	if k1000 > 0 {

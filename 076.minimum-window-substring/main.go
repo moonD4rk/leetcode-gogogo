@@ -5,9 +5,6 @@ var stringList = [][]string{
 	{"a", "a"},
 }
 
-
-
-
 func minWindow(s string, t string) string {
 	var (
 		tmap       = make(map[byte]int)
@@ -27,6 +24,5 @@ func minWindow(s string, t string) string {
 func main() {
 	for _, v := range stringList {
 		minWindow(v[0], v[1])
-
 	}
 }

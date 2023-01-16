@@ -33,7 +33,7 @@ func replaceString(s string, r string) string {
 			return "==="
 		}
 	}
-	var result = ""
+	result := ""
 	if need == 0 {
 		for _, v := range s {
 			// 如果 v == ?, 则从 uniqStr 拿出小于 m 的字符串

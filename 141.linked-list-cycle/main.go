@@ -6,7 +6,7 @@ type ListNode struct {
 }
 
 func hasCycle(head *ListNode) bool {
-	var temp = make(map[*ListNode]bool)
+	temp := make(map[*ListNode]bool)
 	for head != nil {
 		if temp[head] {
 			return true
@@ -31,5 +31,4 @@ func hasCycle2Point(node *ListNode) bool {
 }
 
 func main() {
-
 }

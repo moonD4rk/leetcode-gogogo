@@ -8,8 +8,8 @@ type ListNode struct {
 }
 
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-	var l3 = new(ListNode)
-	var out = l3
+	l3 := new(ListNode)
+	out := l3
 	fmt.Printf("%p %p\n", l3, out)
 	if l1 == nil && l2 == nil {
 		return nil

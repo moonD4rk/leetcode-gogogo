@@ -11,9 +11,7 @@ var numbers = [][]int{
 }
 
 func majorityElement(nums []int) int {
-	var (
-		count, temp int
-	)
+	var count, temp int
 	for i := 0; i < len(nums); i++ {
 		switch {
 		case count == 0:

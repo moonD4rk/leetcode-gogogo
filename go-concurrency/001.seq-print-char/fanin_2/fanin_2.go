@@ -2,6 +2,19 @@ package main
 
 import "fmt"
 
+func main() {
+	n := 20
+	list := make([]chan char, 0, n)
+	for i := 0; i <= n; i++ {
+		m := gen(char(i))
+		list = append(list, m)
+	}
+	c := fanIn2(list...)
+	for v := range c {
+		fmt.Println(v)
+	}
+}
+
 type char int
 
 func gen(num char) chan char {
@@ -22,17 +35,4 @@ func fanIn2(inputs ...chan char) chan char {
 		}
 	}()
 	return c
-}
-
-func main() {
-	n := 20
-	list := make([]chan char, 0, n)
-	for i := 0; i <= n; i++ {
-		m := gen(char(i))
-		list = append(list, m)
-	}
-	c := fanIn2(list...)
-	for v := range c {
-		fmt.Println(v)
-	}
 }

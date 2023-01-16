@@ -16,7 +16,7 @@ func lengthOfLongestSubstring(s string) (result int) {
 	)
 	// pwwkew
 	for i, v := range s {
-		fmt.Println(i, string(v), string(tempMap[v]))
+		fmt.Println(i, string(v), string(rune(tempMap[v])))
 		if now, ok := tempMap[v]; ok && start <= now {
 			start++
 		} else {
@@ -51,7 +51,7 @@ func bruteSolution(s string) (result int) {
 }
 
 func isUnique(sub string) bool {
-	var tempMap = make(map[int32]bool)
+	tempMap := make(map[int32]bool)
 	for _, v := range sub {
 		if _, ok := tempMap[v]; ok {
 			return false

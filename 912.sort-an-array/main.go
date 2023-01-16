@@ -25,7 +25,7 @@ func quickSort(nums []int) []int {
 	fmt.Println(nums[pivot])
 	nums[pivot], nums[end] = nums[end], nums[pivot]
 	fmt.Println(nums)
-	for i, _ := range nums {
+	for i := range nums {
 		if nums[i] < nums[end] {
 			fmt.Printf("%d < %d, 将当前值 %d 和标记值 %d 交换位置\n", nums[i], nums[end], nums[i], nums[start])
 			nums[i], nums[start] = nums[start], nums[i]

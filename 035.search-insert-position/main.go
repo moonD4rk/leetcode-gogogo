@@ -5,6 +5,7 @@ import "fmt"
 var numbers = []int{
 	1, 3, 5, 6,
 }
+
 var index = []int{
 	5, 0, 2, 7,
 }

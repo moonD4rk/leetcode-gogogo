@@ -24,6 +24,7 @@ type ListNode struct {
 	Val  int
 	Next *ListNode
 }
+
 func reverseList(head *ListNode) *ListNode {
 	var prefix *ListNode
 	suffix := new(ListNode)
@@ -35,6 +36,7 @@ func reverseList(head *ListNode) *ListNode {
 	}
 	return prefix
 }
+
 // Runtime: 0 ms, faster than 100.00% of Go online submissions for Reverse Linked List.
 // Memory Usage: 2.6 MB, less than 76.41% of Go online submissions for Reverse Linked List.
 

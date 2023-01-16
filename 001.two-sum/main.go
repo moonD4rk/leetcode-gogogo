@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func twoSum(nums []int, target int) []int {
-	var tempMap = make(map[int]int, len(nums))
+	tempMap := make(map[int]int, len(nums))
 	//for i, v := range nums {
 	//	tempMap[target-v] = i
 	//}
