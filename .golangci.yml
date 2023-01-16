@@ -34,13 +34,14 @@ linters:
     - 'noctx'
     - 'staticcheck'
     - 'stylecheck'
-    - 'unused'
     - 'errcheck'
 #    - 'structcheck'
 #    - 'sqlclosecheck'
 #    - 'deadcode'
 #    - 'varcheck'
 # unsupported lint with golang 1.18+ ref: https://github.com/golangci/golangci-lint/issues/2649
+  disable:
+    - 'unused'
 
 issues:
   exclude-use-default: false
