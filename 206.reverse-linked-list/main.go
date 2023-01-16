@@ -19,7 +19,7 @@ var l = &ListNode{
 	},
 }
 
-// Definition for singly-linked list.
+// ListNode Definition for singly-linked list.
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -27,7 +27,7 @@ type ListNode struct {
 
 func reverseList(head *ListNode) *ListNode {
 	var prefix *ListNode
-	suffix := new(ListNode)
+	var suffix *ListNode
 	for head != nil {
 		suffix = head.Next
 		head.Next = prefix

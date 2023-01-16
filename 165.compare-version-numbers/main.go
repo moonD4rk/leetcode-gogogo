@@ -50,7 +50,6 @@ func compareVersion(version1 string, version2 string) int {
 func minLength(a, b []string) int {
 	if len(a) <= len(b) {
 		return len(a)
-	} else {
-		return len(b)
 	}
+	return len(b)
 }

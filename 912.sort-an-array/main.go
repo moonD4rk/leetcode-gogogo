@@ -24,6 +24,8 @@ func quickSort(nums []int) []int {
 	// 将基准值放到最后
 	fmt.Println(nums[pivot])
 	nums[pivot], nums[end] = nums[end], nums[pivot]
+	//nums[pivot] = nums[end]
+	//nums[end] = nums[pivot]
 	fmt.Println(nums)
 	for i := range nums {
 		if nums[i] < nums[end] {
@@ -40,7 +42,7 @@ func quickSort(nums []int) []int {
 	// 遍历完成后，再将基准值换回到标记位置
 	// 此标记位置为队列中最后一个小于基准值的位置
 	fmt.Println(start, nums[start])
-	nums[start], nums[end] = nums[end], nums[end]
+	nums[start], nums[end] = nums[end], nums[end] // nolint
 	// 此时，已根据基准值将数组分成了两组
 	// 小于基准值的在队列左边，大于基准值的在队列右边
 	// 将两个队列不停的分为大于基准值和小于基准值的两个子队列

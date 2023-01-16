@@ -35,9 +35,8 @@ func maxArea(height []int) int {
 func short(a, b int) int {
 	if a > b {
 		return b
-	} else {
-		return a
 	}
+	return a
 }
 
 func maxArea2(height []int) int {
