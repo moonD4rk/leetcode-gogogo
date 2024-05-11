@@ -1,3 +1,3 @@
-module github.com/moonD4rk/leetcode-gogogo
+module github.com/moond4rk/leetcode-gogogo
 
-go 1.19
+go 1.22

@@ -4,9 +4,6 @@ import "fmt"
 
 func twoSum(nums []int, target int) []int {
 	tempMap := make(map[int]int, len(nums))
-	//for i, v := range nums {
-	//	tempMap[target-v] = i
-	//}
 	for i, v := range nums {
 		if _, ok := tempMap[v]; ok {
 			return []int{tempMap[v], i}

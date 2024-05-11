@@ -1,27 +1,28 @@
 on:
+  pull_request:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
-name: run tests
+name: Tests
 jobs:
   test:
     strategy:
       matrix:
-        go-version: [1.19]
+        go-version: [ "1.22.x" ]
         platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Install Go
         if: success()
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
           go-version: ${{ matrix.go-version }}
-      - name: Checkout code
-        uses: actions/checkout@v2
+
       - name: Run tests
         run: go test -v ./... -covermode=count
 
@@ -30,18 +31,19 @@ jobs:
     steps:
       - name: Install Go
         if: success()
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
-          go-version: 1.19
+          go-version: "1.22.x"
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Calc coverage
         run: |
           go test -v ./... -covermode=count -coverprofile=coverage.out
+
       - name: Convert coverage.out to coverage.lcov
         uses: jandelgado/gcov2lcov-action@v1
       - name: Coveralls
-        uses: coverallsapp/github-action@v1.1.2
+        uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.github_token }}
           path-to-lcov: coverage.lcov
