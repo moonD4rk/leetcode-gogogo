@@ -19,13 +19,6 @@ func maxSubArray(nums []int) int {
 	return maxSum
 }
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 func main() {
 	s := []int{-2, -1}
 	i := maxSubArray(s)

@@ -28,27 +28,20 @@ func lengthOfLongestSubstring(s string) (result int) {
 	return
 }
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 // abcabcbb
 func bruteSolution(s string) (result int) {
-	var max int
+	var maxInt int
 	for i := 0; i < len(s); i++ {
 		for j := i + 1; j <= len(s); j++ {
 			subString := s[i:j]
 			if isUnique(subString) {
-				if len(subString) > max {
-					max = len(subString)
+				if len(subString) > maxInt {
+					maxInt = len(subString)
 				}
 			}
 		}
 	}
-	return max
+	return maxInt
 }
 
 func isUnique(sub string) bool {

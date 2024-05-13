@@ -13,24 +13,17 @@ func maxProfit(prices []int) int {
 	if len(prices) == 0 {
 		return 0
 	}
-	var max int
+	var maxInt int
 	temp := prices[0]
 	for _, v := range prices {
 		if (v - temp) < 0 {
 			temp = v
 		} else {
 			curr := v - temp
-			max = maxInt(curr, max)
+			maxInt = max(curr, maxInt)
 		}
 	}
-	return max
-}
-
-func maxInt(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
+	return maxInt
 }
 
 func main() {
