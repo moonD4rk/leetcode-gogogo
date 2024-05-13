@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 func twoSum(nums []int, target int) []int {
 	tempMap := make(map[int]int, len(nums))
@@ -17,5 +19,5 @@ func main() {
 	nums := []int{3, 2, 4}
 	target := 6
 	i := twoSum(nums, target)
-	fmt.Println(i)
+	log.Println(i)
 }

@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
+	"log"
 )
 
 func main() {
-	var testCases = []struct {
+	testCases := []struct {
 		words  []string
 		x      string
 		wanted []int
@@ -29,6 +29,6 @@ func main() {
 
 	for _, tc := range testCases {
 		wanted := findWordsContaining(tc.words, tc.x[0])
-		fmt.Println(wanted)
+		log.Println(wanted)
 	}
 }

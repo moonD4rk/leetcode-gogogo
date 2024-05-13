@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"math"
 )
 
@@ -28,6 +28,6 @@ func findDisappearedNumbers(nums []int) []int {
 func main() {
 	for _, v := range numbers {
 		h := findDisappearedNumbers(v)
-		fmt.Println(h)
+		log.Println(h)
 	}
 }

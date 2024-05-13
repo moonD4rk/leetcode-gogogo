@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"strconv"
 	"strings"
 )
@@ -18,11 +18,11 @@ var versions = [][]string{
 func main() {
 	for _, v := range versions {
 		i := compareVersion(v[0], v[1])
-		fmt.Println(i)
+		log.Println(i)
 	}
 }
 
-func compareVersion(version1 string, version2 string) int {
+func compareVersion(version1, version2 string) int {
 	v1Slice := strings.Split(version1, ".")
 	v2Slice := strings.Split(version2, ".")
 	for len(v1Slice) < len(v2Slice) {

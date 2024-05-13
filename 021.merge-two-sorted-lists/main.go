@@ -1,16 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 type ListNode struct {
 	Val  int
 	Next *ListNode
 }
 
-func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+func mergeTwoLists(l1, l2 *ListNode) *ListNode {
 	l3 := new(ListNode)
 	out := l3
-	fmt.Printf("%p %p\n", l3, out)
+	log.Printf("%p %p\n", l3, out)
 	if l1 == nil && l2 == nil {
 		return nil
 	}
@@ -38,7 +40,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	} else if l2 != nil {
 		l3.Next = l2
 	}
-	fmt.Printf("%p %p\n", l3, out)
+	log.Printf("%p %p\n", l3, out)
 	return out.Next
 }
 
@@ -63,17 +65,17 @@ func main() {
 		Val:  8,
 		Next: nil,
 	}
-	fmt.Println("l1")
-	fmt.Println()
+	log.Println("l1")
+	log.Println()
 	l3 := mergeTwoLists(l1, l2)
-	fmt.Println()
+	log.Println()
 	l3.rangeList()
 }
 
 func (l *ListNode) rangeList() {
 	for l != nil {
-		fmt.Print(l.Val, "> ")
+		log.Print(l.Val, "> ")
 		l = l.Next
 	}
-	fmt.Println()
+	log.Println()
 }

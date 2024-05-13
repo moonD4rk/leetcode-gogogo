@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 var numbers = [][]int{
 	{2, 2, 1},
@@ -11,7 +13,7 @@ var numbers = [][]int{
 func singleNumber(nums []int) int {
 	var result int
 	for _, v := range nums {
-		result = result ^ v
+		result ^= v
 	}
 	return result
 }
@@ -22,10 +24,10 @@ func main() {
 		b = 9
 	)
 	c := a ^ b
-	fmt.Println(c)
+	log.Println(c)
 
 	for _, v := range numbers {
 		r := singleNumber(v)
-		fmt.Println(r)
+		log.Println(r)
 	}
 }

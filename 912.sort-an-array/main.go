@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 )
 
 var allNums = [][]int{
@@ -22,26 +22,24 @@ func quickSort(nums []int) []int {
 	start := 0
 	end := len(nums) - 1
 	// 将基准值放到最后
-	fmt.Println(nums[pivot])
+	log.Println(nums[pivot])
 	nums[pivot], nums[end] = nums[end], nums[pivot]
-	//nums[pivot] = nums[end]
-	//nums[end] = nums[pivot]
-	fmt.Println(nums)
+	log.Println(nums)
 	for i := range nums {
 		if nums[i] < nums[end] {
-			fmt.Printf("%d < %d, 将当前值 %d 和标记值 %d 交换位置\n", nums[i], nums[end], nums[i], nums[start])
+			log.Printf("%d < %d, 将当前值 %d 和标记值 %d 交换位置\n", nums[i], nums[end], nums[i], nums[start])
 			nums[i], nums[start] = nums[start], nums[i]
-			fmt.Println(nums)
+			log.Println(nums)
 			start++
 		} else {
-			fmt.Printf("%d > %d, 队列不变\n", nums[i], nums[end])
-			fmt.Println(nums)
+			log.Printf("%d > %d, 队列不变\n", nums[i], nums[end])
+			log.Println(nums)
 		}
 	}
-	fmt.Println(nums)
+	log.Println(nums)
 	// 遍历完成后，再将基准值换回到标记位置
 	// 此标记位置为队列中最后一个小于基准值的位置
-	fmt.Println(start, nums[start])
+	log.Println(start, nums[start])
 	nums[start], nums[end] = nums[end], nums[end] // nolint
 	// 此时，已根据基准值将数组分成了两组
 	// 小于基准值的在队列左边，大于基准值的在队列右边
@@ -65,6 +63,6 @@ func sortBubble(nums []int) []int {
 func main() {
 	for _, v := range allNums {
 		s := quickSort(v)
-		fmt.Println(s)
+		log.Println(s)
 	}
 }

@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 var numbers = [][]int{
 	{1, 1, 2},
@@ -28,6 +30,6 @@ func removeDuplicates(nums []int) int {
 func main() {
 	for _, v := range numbers {
 		lenNumbs := removeDuplicates(v)
-		fmt.Println(lenNumbs)
+		log.Println(lenNumbs)
 	}
 }

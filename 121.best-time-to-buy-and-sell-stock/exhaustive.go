@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 var stock = [][]int{
 	{7, 1, 2, 0, 6, 4, 7}, // 6-1=5
@@ -33,7 +35,6 @@ func maxInt(a, b int) int {
 
 func main() {
 	for _, v := range stock {
-		max := maxProfit(v)
-		fmt.Println(max)
+		log.Println(maxProfit(v))
 	}
 }

@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 var numbers = []int{
 	1, 3, 5, 6,
@@ -40,6 +42,6 @@ func searchInsert(nums []int, target int) int {
 func main() {
 	for _, v := range index {
 		result := searchInsert(numbers, v)
-		fmt.Println(result)
+		log.Println(result)
 	}
 }

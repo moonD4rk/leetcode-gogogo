@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 type ListNode struct {
 	Val  int
@@ -9,7 +11,7 @@ type ListNode struct {
 
 func removeElements(head *ListNode, val int) *ListNode {
 	if head == nil {
-		return head
+		return nil
 	}
 	// 初始化一个slow链表，将原始节点挂载到此节点之后
 	res := &ListNode{0, head}
@@ -52,10 +54,10 @@ func (l *ListNode) Append(num int) {
 
 func (l *ListNode) Range() {
 	for iter := l; iter != nil; iter = iter.Next {
-		fmt.Printf("%v -> ", iter.Val)
+		log.Printf("%v -> ", iter.Val)
 	}
-	fmt.Println()
-	fmt.Printf("-----range is done\n")
+	log.Println()
+	log.Printf("-----range is done\n")
 }
 
 func main() {

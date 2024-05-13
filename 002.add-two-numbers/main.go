@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 // ListNode Definition for singly-linked list.
 type ListNode struct {
@@ -8,7 +10,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+func addTwoNumbers(l1, l2 *ListNode) *ListNode {
 	l3 := new(ListNode)
 	node3 := l3
 	a := 0
@@ -37,11 +39,11 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 func main() {
 	l3 := new(ListNode)
-	fmt.Printf("%p\n", l3)
+	log.Printf("%p\n", l3)
 	node3 := l3
-	fmt.Printf("%p\n", node3)
+	log.Printf("%p\n", node3)
 	node3.Next = new(ListNode)
 	node3.Next = nil
-	fmt.Printf("%p\n", l3.Next)
-	fmt.Printf("%p\n", node3.Next)
+	log.Printf("%p\n", l3.Next)
+	log.Printf("%p\n", node3.Next)
 }

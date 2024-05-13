@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 var haystacks = [][]string{
 	{"hello", "ll"},
@@ -9,7 +11,7 @@ var haystacks = [][]string{
 	{"mississippi", "issipi"},
 }
 
-func strStr(haystack string, needle string) int {
+func strStr(haystack, needle string) int {
 	if needle == "" {
 		return 0
 	}
@@ -33,6 +35,6 @@ func strStr(haystack string, needle string) int {
 func main() {
 	for _, v := range haystacks {
 		r := strStr(v[0], v[1])
-		fmt.Println(r)
+		log.Println(r)
 	}
 }

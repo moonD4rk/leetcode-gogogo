@@ -34,6 +34,5 @@ var (
 func TestMergeKLists(t *testing.T) {
 	sorted := MergeKLists([]*ListNode{l1, l2, l3})
 	if sorted == nil {
-
 	}
 }

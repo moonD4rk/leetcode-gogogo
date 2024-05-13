@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 func maxSubArray(nums []int) int {
 	if len(nums) == 1 {
@@ -27,5 +29,5 @@ func max(a, b int) int {
 func main() {
 	s := []int{-2, -1}
 	i := maxSubArray(s)
-	fmt.Println(i)
+	log.Println(i)
 }

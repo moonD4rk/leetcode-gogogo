@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 )
 
 var (
@@ -26,17 +26,17 @@ func intToRoman(i int) string {
 	result := ""
 	if k1000 > 0 {
 		result += s1000[k1000-1]
-		i = i - k1000*1000
+		i -= k1000 * 1000
 	}
 	k100 = i / 100
 	if k100 > 0 {
 		result += s100[k100-1]
-		i = i - k100*100
+		i -= k100 * 100
 	}
 	k10 = i / 10
 	if k10 > 0 {
 		result += s10[k10-1]
-		i = i - k10*10
+		i -= k10 * 10
 	}
 	k = i
 	if k > 0 {
@@ -47,5 +47,5 @@ func intToRoman(i int) string {
 
 func main() {
 	n := intToRoman(18)
-	fmt.Println(n)
+	log.Println(n)
 }

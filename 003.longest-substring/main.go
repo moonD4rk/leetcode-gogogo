@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 var subStrings = []string{
 	"abcabcbb", // 3
@@ -14,9 +16,8 @@ func lengthOfLongestSubstring(s string) (result int) {
 		start   int
 		tempMap = map[rune]int{}
 	)
-	// pwwkew
 	for i, v := range s {
-		fmt.Println(i, string(v), string(rune(tempMap[v])))
+		log.Println(i, string(v), string(rune(tempMap[v])))
 		if now, ok := tempMap[v]; ok && start <= now {
 			start++
 		} else {
@@ -64,6 +65,6 @@ func isUnique(sub string) bool {
 func main() {
 	for _, v := range subStrings {
 		l := bruteSolution(v)
-		fmt.Println(l)
+		log.Println(l)
 	}
 }

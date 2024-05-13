@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 var numbers = [][]int{
 	{0, 1, 0, 3, 12},
@@ -23,8 +25,8 @@ func moveZeroes(nums []int) {
 
 func main() {
 	for _, v := range numbers {
-		fmt.Println("before", v)
+		log.Println("before", v)
 		moveZeroes(v)
-		fmt.Println("after", v)
+		log.Println("after", v)
 	}
 }

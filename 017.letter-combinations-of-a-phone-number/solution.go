@@ -5,18 +5,16 @@ func letterCombinations(digits string) []string {
 		return []string{}
 	}
 
-	var (
-		digitLetters = map[string][]string{
-			"2": []string{"a", "b", "c"},
-			"3": []string{"d", "e", "f"},
-			"4": []string{"g", "h", "i"},
-			"5": []string{"j", "k", "l"},
-			"6": []string{"m", "n", "o"},
-			"7": []string{"p", "q", "r", "s"},
-			"8": []string{"t", "u", "v"},
-			"9": []string{"w", "x", "y", "z"},
-		}
-	)
+	digitLetters := map[string][]string{
+		"2": {"a", "b", "c"},
+		"3": {"d", "e", "f"},
+		"4": {"g", "h", "i"},
+		"5": {"j", "k", "l"},
+		"6": {"m", "n", "o"},
+		"7": {"p", "q", "r", "s"},
+		"8": {"t", "u", "v"},
+		"9": {"w", "x", "y", "z"},
+	}
 	var result []string
 	for _, v := range digits {
 		letters := digitLetters[string(v)]
@@ -83,7 +81,7 @@ func combineThird(raw [][][]string) []string {
 	if len(raw) == 0 {
 		return []string{}
 	}
-	var result2 [][]string
+	result2 := make([][]string, 0, len(raw))
 	for _, sRaw := range raw {
 		s := combine(sRaw)
 		result2 = append(result2, s)

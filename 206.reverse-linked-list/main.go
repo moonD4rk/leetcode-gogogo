@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 var l = &ListNode{
 	Val: 1,
@@ -43,7 +45,7 @@ func reverseList(head *ListNode) *ListNode {
 func main() {
 	m := reverseList(l)
 	for m != nil {
-		fmt.Println(m)
+		log.Println(m)
 		m = m.Next
 	}
 }

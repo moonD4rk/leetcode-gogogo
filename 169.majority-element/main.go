@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 var numbers = [][]int{
 	{3, 2, 3},
@@ -29,6 +31,6 @@ func majorityElement(nums []int) int {
 func main() {
 	for _, v := range numbers {
 		s := majorityElement(v)
-		fmt.Println(s)
+		log.Println(s)
 	}
 }

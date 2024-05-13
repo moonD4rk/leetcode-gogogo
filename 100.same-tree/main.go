@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 type TreeNode struct {
 	Val   int
@@ -8,7 +10,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func isSameTree(p *TreeNode, q *TreeNode) bool {
+func isSameTree(p, q *TreeNode) bool {
 	switch {
 	case p == nil && q == nil:
 		return true
@@ -45,5 +47,5 @@ func main() {
 		},
 	}
 	b := isSameTree(t1, t2)
-	fmt.Println(b)
+	log.Println(b)
 }

@@ -1,14 +1,14 @@
 package solution
 
 import (
-	"fmt"
+	"log"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
 func Test_letterCombinations(t *testing.T) {
-	var testCases = []struct {
+	testCases := []struct {
 		digits      string
 		wantedArray []string
 	}{
@@ -36,7 +36,7 @@ func Test_Combine(t *testing.T) {
 	s2 := []string{"4", "5"}
 	s3 := []string{"q", "w", "e", "r"}
 	result := combine([][]string{s, s2, s3})
-	fmt.Println(result)
+	log.Println(result)
 }
 
 func Benchmark_Combine1(b *testing.B) {
@@ -74,10 +74,10 @@ func Test_CombineThird(t *testing.T) {
 	s5 := []string{"j", "k"}
 	s6 := []string{"v", "b", "n", "m"}
 	raw := [][][]string{
-		[][]string{s, s4},
-		[][]string{s2, s5},
-		[][]string{s3, s6},
+		{s, s4},
+		{s2, s5},
+		{s3, s6},
 	}
 	result := combineThird(raw)
-	fmt.Println(result)
+	log.Println(result)
 }

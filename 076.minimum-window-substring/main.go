@@ -5,7 +5,7 @@ var stringList = [][]string{
 	{"a", "a"},
 }
 
-func minWindow(s string, t string) string {
+func minWindow(s, t string) string {
 	var (
 		tmap       = make(map[byte]int)
 		tempString string
